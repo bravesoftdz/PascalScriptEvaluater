@@ -1,0 +1,62 @@
+object PascalScriptEvalForm: TPascalScriptEvalForm
+  Left = 429
+  Height = 439
+  Top = 220
+  Width = 392
+  Caption = 'PascalScriptEvaluater'
+  ClientHeight = 439
+  ClientWidth = 392
+  LCLVersion = '1.2.6.0'
+  object BtnCompileAndRun: TButton
+    Left = 64
+    Height = 25
+    Top = 224
+    Width = 272
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Compile And Run'
+    OnClick = BtnCompileAndRunClick
+    TabOrder = 0
+  end
+  object ScriptText: TMemo
+    Left = 8
+    Height = 210
+    Top = 8
+    Width = 376
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Lines.Strings = (
+      'program pg1;'
+      ''
+      'procedure p1;'
+      'begin'
+      '    ShowMessage(''Hello, World!'');'
+      'end;'
+      ''
+      'begin'
+      '    p1;'
+      'end.'
+    )
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+  object ResultText: TMemo
+    Left = 8
+    Height = 178
+    Top = 256
+    Width = 376
+    Anchors = [akLeft, akRight, akBottom]
+    Lines.Strings = (
+      'Here is the output.'
+    )
+    ReadOnly = True
+    ScrollBars = ssBoth
+    TabOrder = 2
+  end
+  object PSScript1: TPSScript
+    CompilerOptions = []
+    OnCompile = PSScript1Compile
+    Plugins = <>
+    UsePreProcessor = False
+    left = 344
+    top = 224
+  end
+end
